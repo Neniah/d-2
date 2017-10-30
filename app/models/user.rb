@@ -1,4 +1,5 @@
 class User < ApplicationRecord
+  has_many :projects
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable and :omniauthable
   devise :database_authenticatable, :registerable,
@@ -8,7 +9,7 @@ class User < ApplicationRecord
   validates :last_name, presence: true
   validates :email, uniqueness: true, presence: true
 
-  def full_name
-    :first_name + ' ' + :last_name
+  def name
+    [first_name, last_name].join(" ")
   end
 end

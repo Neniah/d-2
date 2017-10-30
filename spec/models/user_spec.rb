@@ -42,13 +42,12 @@ RSpec.describe User, type: :model do
     user.valid?
     expect(user.errors[:email]).to include('has already been taken')
   end
-  xit 'returns a users full name as a string' do
+  it 'returns a users full name as a string' do
     user = User.new(
       first_name: 'Jane',
       last_name: 'Tester',
       email: 'tester@example.com',
-      password: 'dottle-pavillion',
     )
-
+    expect(user.name).to eq 'Jane Tester'
   end
 end
