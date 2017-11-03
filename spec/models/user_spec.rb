@@ -3,7 +3,7 @@ require 'rails_helper'
 RSpec.describe User, type: :model do
 
   describe User do
-    it "has a valid factoty" do
+    it "has a valid factory" do
       expect(FactoryGirl.build(:user)).to be_valid
     end
   end
@@ -17,7 +17,7 @@ RSpec.describe User, type: :model do
     expect(user).to be_valid
   end
 
-  it "is invalid without a fisrt name" do
+  it "is invalid without a first name" do
     user = FactoryGirl.build(:user, first_name: nil)   #FactoryGirl
     user.valid?
     expect(user.errors[:first_name]).to include("can't be blank")

@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20171030095113) do
+ActiveRecord::Schema.define(version: 20171103184326) do
 
   create_table "notes", force: :cascade do |t|
     t.datetime "created_at", null: false
@@ -27,6 +27,9 @@ ActiveRecord::Schema.define(version: 20171030095113) do
     t.datetime "updated_at", null: false
     t.string "name"
     t.integer "user_id"
+    t.text "description"
+    t.date "due_on"
+    t.boolean "completed"
     t.index ["user_id"], name: "index_projects_on_user_id"
   end
 
