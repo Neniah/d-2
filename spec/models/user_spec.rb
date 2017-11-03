@@ -33,27 +33,22 @@ RSpec.describe User, type: :model do
     expect(user.errors[:email]).to include("can't be blank")
   end
   it 'is invalid with a duplicate email address' do
-    User.create(
-      first_name: 'Joe',
-      last_name: 'Tester',
-      email: 'tester@example.com',
-      password: 'dottle-pavillion'
-    )
-    user = User.new(
-      first_name: 'Jane',
-      last_name: 'Tester',
-      email: 'tester@example.com',
-      password: 'dottle-pavillion'
-    )
+    FactoryGirl.create(:user, email: "aaron@example.com")
+    user = FactoryGirl.build(:user, email: "aaron@example.com")
     user.valid?
     expect(user.errors[:email]).to include('has already been taken')
   end
   it 'returns a users full name as a string' do
-    user = User.new(
+    user = FactoryGirl.build(:user,
       first_name: 'Jane',
       last_name: 'Tester',
-      email: 'tester@example.com',
     )
     expect(user.name).to eq 'Jane Tester'
+  end
+
+  it "does something with multiple users" do
+    user1 = FactoryGirl.create(:user)
+    user2 = FactoryGirl.create(:user)
+    expect(true).to be true
   end
 end
