@@ -19,25 +19,21 @@ RSpec.describe Project, type: :model do
   end
 
   it 'allows two users to share a project name' do
-    user = User.create(
-      first_name: 'Joe',
-      last_name: 'Tester',
-      email: 'tester@example.com',
-      password: 'dottle-pavillion'
-    )
+    user = FactoryGirl.create(:user)
+
     user.projects.create(
       name: 'Test Project',
     )
-    other_user = User.new(
-      first_name: 'Jane',
-      last_name: 'Tester',
-      email: 'jane@example.com',
-      password: 'dottle-pavillion'
-    )
+    other_user = FactoryGirl.create(:user)
     other_project = other_user.projects.build(
       name: 'Test Project',
     )
     expect(other_project).to be_valid
+  end
+
+  it "can have many notes" do
+    project = FactoryGirl.create(:project, :with_notes)
+    expect(project.notes.length).to eq 5
   end
 
   describe "late status" do

@@ -8,12 +8,7 @@ RSpec.describe User, type: :model do
     end
   end
   it "is valid with a first name, last name, email, and password" do
-    user = User.new(
-      first_name: 'Maria',
-      last_name: 'Lobillo',
-      email: 'tester@example.com',
-      password: 'dottle-nouveau-pavillion-tights-furze',
-    )
+    user = FactoryGirl.create(:user)
     expect(user).to be_valid
   end
 
