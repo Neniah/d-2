@@ -43,6 +43,7 @@ group :development, :test do
   # Adds support for Capybara system testing and selenium driver
   gem 'capybara', '~> 2.15', '>= 2.15.4'
   gem 'launchy', '~> 2.4', '>= 2.4.3'
+  gem 'poltergeist', '~> 1.16'
   gem 'selenium-webdriver'
 end
 
