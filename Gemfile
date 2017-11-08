@@ -42,6 +42,7 @@ group :development, :test do
   gem 'spring-commands-rspec', '~> 1.0', '>= 1.0.4'
   # Adds support for Capybara system testing and selenium driver
   gem 'capybara', '~> 2.15', '>= 2.15.4'
+  gem 'launchy', '~> 2.4', '>= 2.4.3'
   gem 'selenium-webdriver'
 end
 
