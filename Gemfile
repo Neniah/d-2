@@ -41,7 +41,7 @@ group :development, :test do
   gem 'factory_girl_rails', '~> 4.9'
   gem 'spring-commands-rspec', '~> 1.0', '>= 1.0.4'
   # Adds support for Capybara system testing and selenium driver
-  gem 'capybara', '~> 2.13'
+  gem 'capybara', '~> 2.15', '>= 2.15.4'
   gem 'selenium-webdriver'
 end
 

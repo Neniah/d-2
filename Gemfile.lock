@@ -217,7 +217,7 @@ PLATFORMS
 
 DEPENDENCIES
   byebug
-  capybara (~> 2.13)
+  capybara (~> 2.15, >= 2.15.4)
   coffee-rails (~> 4.2)
   devise (~> 4.3)
   factory_girl_rails (~> 4.9)
